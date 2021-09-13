@@ -102,7 +102,7 @@ class TodoViewableList extends HookWidget {
               model: todosList[index],
               onCompletedTapped: () {
                 notifier.getTodos(type);
-                notifier.ref.read(homeProvider.notifier).refresh();
+                notifier.ref.read(homeProvider.notifier).fetchHome();
               },
             ),
             itemCount: todosList.length,

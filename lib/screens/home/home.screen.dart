@@ -46,7 +46,7 @@ class Home extends HookWidget {
         ),
       ),
       body: RefreshIndicator(
-        onRefresh: notifier.refresh,
+        onRefresh: notifier.fetchHome,
         child: state.isLoading
             ? const Center(child: GFLoader(type: GFLoaderType.ios))
             : ListView(

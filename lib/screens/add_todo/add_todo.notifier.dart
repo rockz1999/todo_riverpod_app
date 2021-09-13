@@ -13,7 +13,7 @@ class AddTodoNotifier extends StateNotifier<AddTodoState> {
     state.copyWith.call(isLoading: true, important: important);
     edit ? await db.editTodo(todo) : await db.addTodo(todo);
     state.copyWith.call(isLoading: false, important: important);
-    ref.read(homeProvider.notifier).refresh();
+    ref.read(homeProvider.notifier).fetchHome();
     Get.back();
   }
 
